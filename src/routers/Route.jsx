@@ -45,7 +45,9 @@ const Route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://news-dragon-server-shajib-dv.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },

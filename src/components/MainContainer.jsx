@@ -10,7 +10,7 @@ const MainContainer = () => {
   const [newses, setNewses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/news")
+    fetch("https://news-dragon-server-shajib-dv.vercel.app/news")
       .then((res) => res.json())
       .then((data) => setNewses(data))
       .catch((error) => console.log("Error", error.message));

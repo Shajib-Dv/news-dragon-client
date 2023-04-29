@@ -7,7 +7,7 @@ const LeftSideBar = () => {
   const [catagories, setCatagories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/catagories")
+    fetch("https://news-dragon-server-shajib-dv.vercel.app/catagories")
       .then((res) => res.json())
       .then((data) => setCatagories(data))
       .catch((error) => console.log("error", error.message));

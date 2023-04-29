@@ -9,7 +9,7 @@ const Categories = () => {
   const [news, setNews] = useState([]);
   // console.log(news);
   useEffect(() => {
-    fetch(`http://localhost:5000/news/category/${id}`)
+    fetch(`https://news-dragon-server-shajib-dv.vercel.app/news/category/${id}`)
       .then((res) => res.json())
       .then((data) => setNews(data))
       .catch((error) => console.log(error.message));
