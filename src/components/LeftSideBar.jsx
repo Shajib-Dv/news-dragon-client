@@ -16,10 +16,14 @@ const LeftSideBar = () => {
   return (
     <>
       <h2 className="text-2xl font-bold pb-4">All Catagories</h2>
-      <div className="space-y-4">
+      <div className="space-y-4 sticky top-10">
         {catagories &&
           catagories.map((category) => (
-            <Link to={category.id} className="block" key={category.id}>
+            <Link
+              to={`/category/${category.id}`}
+              className="block hover:text-yellow-100 hover:underline"
+              key={category.id}
+            >
               {category.name}
             </Link>
           ))}

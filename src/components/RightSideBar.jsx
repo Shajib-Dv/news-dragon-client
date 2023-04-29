@@ -17,7 +17,7 @@ import {
 const RightSideBar = () => {
   return (
     <>
-      <div className="text-center space-y-3">
+      <div className="text-center space-y-3 sticky top-10">
         <h3 className="text-3xl  font-bold">Login with</h3>
         <button className="btn gap-2 btn-outline btn-primary">
           <FaGoogle /> login with google

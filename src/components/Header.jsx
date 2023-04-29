@@ -1,13 +1,15 @@
 /** @format */
 
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/logo.png";
 import moment from "moment";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 import avatar from "../assets/1.png";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
   return (
     <>
       <div className="text-center py-4">
@@ -37,7 +39,14 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <Link to="/">Login</Link>
+        {user ? (
+          <button onClick={() => logOut()} className="btn btn-xs">
+            Log out
+          </button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+        <Link to="/register">Register</Link>
       </nav>
     </>
   );

@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import LeftSideBar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
+import { Link, Navigate } from "react-router-dom";
+import NewsCard from "./NewsCard";
 
 const MainContainer = () => {
   const [newses, setNewses] = useState([]);
@@ -14,18 +16,10 @@ const MainContainer = () => {
       .catch((error) => console.log("Error", error.message));
   }, []);
 
-  //   console.log(news);
+  // console.log(newses);
   return (
-    <div className="text-white grid grid-cols-1 md:grid-cols-4 gap-4 p-10 my-10">
-      <div className="">
-        <LeftSideBar />
-      </div>
-      <div className="md:col-span-2">
-        {newses && newses.map((news) => <p>{news.author?.name}</p>)}
-      </div>
-      <div className="">
-        <RightSideBar />
-      </div>
+    <div>
+      {newses && newses.map((news) => <NewsCard key={news._id} news={news} />)}
     </div>
   );
 };
